@@ -189,11 +189,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
   },
-  ["vim-airline-themes"] = {
-    loaded = true,
-    path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-airline-themes",
-    url = "https://github.com/vim-airline/vim-airline-themes"
-  },
   ["vim-be-good"] = {
     loaded = true,
     path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-be-good",
