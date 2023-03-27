@@ -60,5 +60,7 @@ return require('packer').startup(function(use)
     use('nvim-tree/nvim-tree.lua')
     use('nvim-tree/nvim-web-devicons')
 
+    use('folke/todo-comments.nvim')
+
     --use('ryanoasis/vim-devicons')
 end)
