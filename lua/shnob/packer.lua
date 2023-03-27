@@ -13,9 +13,6 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    --use({ 'rose-pine/neovim', as = 'rose-pine' })
-    --vim.cmd('colorscheme rose-pine')
-
     use('folke/tokyonight.nvim')
     --vim.cmd('colorscheme tokyonight')
 
@@ -30,7 +27,6 @@ return require('packer').startup(function(use)
     use('tpope/vim-fugitive')
 
     use('vim-airline/vim-airline')
-    --use('vim-airline/vim-airline-themes')
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -55,6 +51,8 @@ return require('packer').startup(function(use)
         }
     }
 
+    --use('mfussenegger/nvim-jdtls')
+
     use('ThePrimeagen/vim-be-good')
 
     use('nvim-tree/nvim-tree.lua')
@@ -62,5 +60,5 @@ return require('packer').startup(function(use)
 
     use('folke/todo-comments.nvim')
 
-    --use('ryanoasis/vim-devicons')
+    use('alec-gibson/nvim-tetris')
 end)

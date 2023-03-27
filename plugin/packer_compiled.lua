@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tetris"] = {
+    loaded = true,
+    path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tetris",
+    url = "https://github.com/alec-gibson/nvim-tetris"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tree.lua",
