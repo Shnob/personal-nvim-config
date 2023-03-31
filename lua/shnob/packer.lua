@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
 
     use('nvim-treesitter/playground')
 
+    use('nvim-lua/plenary.nvim')
     use('ThePrimeagen/harpoon')
 
     use('mbbill/undotree')
