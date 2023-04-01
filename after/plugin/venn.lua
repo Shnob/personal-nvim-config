@@ -1,3 +1,4 @@
+vim.o.virtualedit = 'none'
 
 vim.keymap.set("n", "<leader>v", function()
     if vim.o.virtualedit == 'none' then
