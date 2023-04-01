@@ -194,6 +194,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["venn.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\venn.nvim",
+    url = "https://github.com/jbyuki/venn.nvim"
+  },
   ["vim-airline"] = {
     loaded = true,
     path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-airline",

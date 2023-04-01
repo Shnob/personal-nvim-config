@@ -62,4 +62,6 @@ return require('packer').startup(function(use)
     use('folke/todo-comments.nvim')
 
     use('alec-gibson/nvim-tetris')
+
+    use('jbyuki/venn.nvim')
 end)
