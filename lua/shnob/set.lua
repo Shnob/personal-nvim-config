@@ -22,3 +22,5 @@ vim.opt.updatetime = 50
 vim.opt.shell = "powershell"
 
 vim.g.airline_powerline_fonts = true
+
+vim.opt.cursorline = true
