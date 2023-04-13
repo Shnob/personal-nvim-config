@@ -27,8 +27,8 @@ return require('packer').startup(function(use)
 
     use('tpope/vim-fugitive')
 
-    --use('vim-airline/vim-airline')
-    use('nvim-lualine/lualine.nvim')
+    use('vim-airline/vim-airline')
+    use('vim-airline/vim-airline-themes')
 
     use {
         'VonHeikemen/lsp-zero.nvim',
