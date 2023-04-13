@@ -7,5 +7,5 @@ function ColorEditor(color)
 	vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 end
 
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme tokyonight-night]]
 ColorEditor()
