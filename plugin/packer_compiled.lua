@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason-lspconfig.nvim",
@@ -198,11 +203,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\venn.nvim",
     url = "https://github.com/jbyuki/venn.nvim"
-  },
-  ["vim-airline"] = {
-    loaded = true,
-    path = "C:\\Users\\Jake\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-airline",
-    url = "https://github.com/vim-airline/vim-airline"
   },
   ["vim-be-good"] = {
     loaded = true,
