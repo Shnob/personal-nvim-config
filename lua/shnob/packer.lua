@@ -64,4 +64,6 @@ return require('packer').startup(function(use)
     use('alec-gibson/nvim-tetris')
 
     use('jbyuki/venn.nvim')
+
+    use('lukas-reineke/indent-blankline.nvim')
 end)
