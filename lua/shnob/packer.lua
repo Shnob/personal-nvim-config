@@ -66,4 +66,6 @@ return require('packer').startup(function(use)
     use('jbyuki/venn.nvim')
 
     use('lukas-reineke/indent-blankline.nvim')
+
+    use {'folke/which-key.nvim'}
 end)
