@@ -52,8 +52,6 @@ return require('packer').startup(function(use)
         }
     }
 
-    --use('mfussenegger/nvim-jdtls')
-
     use('ThePrimeagen/vim-be-good')
 
     use('nvim-tree/nvim-tree.lua')
@@ -68,4 +66,6 @@ return require('packer').startup(function(use)
     use('lukas-reineke/indent-blankline.nvim')
 
     use {'folke/which-key.nvim'}
+
+    use('mfussenegger/nvim-jdtls')
 end)
