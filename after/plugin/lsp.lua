@@ -6,3 +6,7 @@ lsp.ensure_installed({
 })
 
 lsp.setup()
+
+vim.diagnostic.config({
+    virtual_text = true,
+})
