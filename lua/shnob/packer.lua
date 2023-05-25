@@ -70,4 +70,6 @@ return require('packer').startup(function(use)
     use('mfussenegger/nvim-jdtls')
 
     use('Eandrju/cellular-automaton.nvim')
+
+    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 end)
