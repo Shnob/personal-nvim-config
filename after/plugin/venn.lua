@@ -8,4 +8,4 @@ vim.keymap.set("n", "<leader>v", function()
     end
 end, {desc = "Toggle virtualedit"})
 
-vim.keymap.set('v', '<C-v>', ':VBox<CR>', {desc = "Venn: draw"})
+vim.keymap.set('v', 'v', ':VBox<CR>', {desc = "Venn: draw"})
