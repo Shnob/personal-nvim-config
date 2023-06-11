@@ -72,4 +72,6 @@ return require('packer').startup(function(use)
     use('Eandrju/cellular-automaton.nvim')
 
     use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
+    use {'lervag/vimtex'}
 end)

@@ -9,6 +9,8 @@ vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
 
+vim.keymap.set("n", "<CR>", "ciw", {desc = "Change inside word"})
+
 vim.keymap.set("n", "<leader>T", vim.cmd.terminal, {desc = "Open terminal"})
 
 vim.keymap.set("n", "<leader>tt", vim.cmd.tabnew, {desc = "New tab"})
