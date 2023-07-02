@@ -19,22 +19,23 @@ local config = {
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
 
         -- 💀 Done
-        '-jar', 'C:/Program Files/Java/jdt-language-server-1.9.0-202203031534/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-        -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
-        -- Must point to the                                                     Change this to
-        -- eclipse.jdt.ls installation                                           the actual version
+        -- '-jar', 'C:/Program Files/Java/jdt-language-server-1.9.0-202203031534/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+        '-jar', install_root_dir = vim.fn.stdpath "data" .. "mason/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+        -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                                                    ^^^^^^^^^^^^^^
+        -- Must point to the                                                                                  Change this to
+        -- eclipse.jdt.ls installation                                                                        the actual version
 
 
         -- 💀 Done
-        '-configuration', 'C:/Program Files/Java/jdt-language-server-1.9.0-202203031534/config_win',
-        -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
-        -- Must point to the                      Change to one of `linux`, `win` or `mac`
-        -- eclipse.jdt.ls installation            Depending on your system.
+        '-configuration', vim.fn.stdpath 'data' .. 'packages/jdtls/config_linux/',
+        -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                ^^^^^^
+        -- Must point to the                                              Change to one of `linux`, `win` or `mac`
+        -- eclipse.jdt.ls installation                                    Depending on your system.
 
 
         -- 💀 Done
         -- See `data directory configuration` section in the README
-        '-data', 'C:/Users/Jake/Documents/JDTLS/nvim-workspaces/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+        '-data', vim.fn.stdpath 'data' .. 'jdtls-data-directory/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
     },
 
     -- 💀 //TODO: Not Sure about this one??
