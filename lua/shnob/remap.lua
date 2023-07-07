@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
---vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeOpen, {desc = "Open nvimtree"})
+
+vim.keymap.set("n", "<leader>fe", vim.cmd.Ex, {desc = "Open Netrw"})
+vim.keymap.set("n", "<leader>fo", require('oil').open, {desc = "Open Oil"})
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")

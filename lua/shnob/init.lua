@@ -5,4 +5,4 @@ vim.g.termguicolors = true
 
 require("shnob.remap")
 require("shnob.set")
-require("shnob.nvimtree")
+--require("shnob.nvimtree")

@@ -54,8 +54,9 @@ return require('packer').startup(function(use)
 
     use('ThePrimeagen/vim-be-good')
 
-    use('nvim-tree/nvim-tree.lua')
+    --use('nvim-tree/nvim-tree.lua')
     use('nvim-tree/nvim-web-devicons')
+    use('stevearc/oil.nvim')
 
     use('folke/todo-comments.nvim')
 
