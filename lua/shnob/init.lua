@@ -3,7 +3,7 @@
 
 vim.g.termguicolors = true
 
+require("shnob.lazy")
 require("shnob.remap")
 require("shnob.set")
-require("shnob.lazy")
 --require("shnob.nvimtree")
