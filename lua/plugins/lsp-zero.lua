@@ -2,7 +2,7 @@ return {
     'VonHeikemen/lsp-zero.nvim',
     lazy = true,
     cmd = 'LspInfo',
-    event = { 'BufRead' },
+    event = { 'VeryLazy' },
     --ft = {"lua", "rust", "c", "cpp", "java", "python"},
     branch = 'v2.x',
     dependencies = {
