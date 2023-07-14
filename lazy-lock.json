@@ -20,6 +20,7 @@
   "playground": { "branch": "master", "commit": "2b81a018a49f8e476341dfcb228b7b808baba68b" },
   "plenary.nvim": { "branch": "master", "commit": "bda256fab0eb66a15e8190937e417e6a14ee5d72" },
   "promise-async": { "branch": "main", "commit": "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e" },
+  "startup.nvim": { "branch": "master", "commit": "5295eabe35eb66d0b355ada0ca06ec8bdb8f9698" },
   "telescope.nvim": { "branch": "master", "commit": "776b509f80dd49d8205b9b0d94485568236d1192" },
   "todo-comments.nvim": { "branch": "main", "commit": "09b0b17d824d2d56f02ff15967e8a2499a89c731" },
   "tokyonight.nvim": { "branch": "main", "commit": "284667adfff02b9a0adc65968c553c6096b543b6" },
@@ -27,7 +28,5 @@
   "venn.nvim": { "branch": "main", "commit": "c114563960b8fb1197695d42798d1f3e7190b798" },
   "vim-be-good": { "branch": "master", "commit": "c290810728a4f75e334b07dc0f3a4cdea908d351" },
   "vim-fugitive": { "branch": "master", "commit": "43f18ab9155c853a84ded560c6104e6300ad41da" },
-  "vim-reprocessed": { "branch": "master", "commit": "95a959d3094f70615d20ea6ace16ddc89e21bc6e" },
-  "vimtex": { "branch": "master", "commit": "01733c0969cf8922e932bcc30b768966c69ffaf0" },
   "which-key.nvim": { "branch": "main", "commit": "d871f2b664afd5aed3dc1d1573bef2fb24ce0484" }
 }
