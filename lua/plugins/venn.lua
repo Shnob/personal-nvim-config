@@ -1,0 +1,18 @@
+return {}
+--return {
+--    "jbyuki/venn.nvim",
+--    lazy = false,
+--    config = function()
+--        vim.o.virtualedit = 'none'
+--    end,
+--    keys = {
+--        { "<leader>v", function()
+--            if vim.o.virtualedit == 'none' then
+--                vim.o.virtualedit = 'all'
+--            else
+--                vim.o.virtualedit = 'none'
+--            end
+--        end, { desc = "Toggle virtualedit" } },
+--        { "v", mode = "v", "<cmd>VBox<cr>", { desc = "Venn: draw" } },
+--    }
+--}
