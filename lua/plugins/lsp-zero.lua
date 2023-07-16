@@ -7,7 +7,14 @@ return {
     branch = 'v2.x',
     dependencies = {
         -- LSP Support
-        { 'neovim/nvim-lspconfig' }, -- Required
+        { {
+            'neovim/nvim-lspconfig',
+            config = function()
+                local lspconfig = require('lspconfig')
+                lspconfig.clangd.setup {
+                }
+            end
+        } }, -- Required
         {
             -- Optional
             'williamboman/mason.nvim',
@@ -21,14 +28,21 @@ return {
         { 'hrsh7th/nvim-cmp' },     -- Required
         { 'hrsh7th/cmp-nvim-lsp' }, -- Required
         { 'L3MON4D3/LuaSnip' },     -- Required
+        { "nvim-tree/nvim-web-devicons" },
     },
     config = function()
         local lsp = require('lsp-zero')
-        local lspconfig = require('lspconfig')
 
         lsp.preset('recommended')
 
         lsp.ensure_installed({
+        })
+
+        lsp.set_sign_icons({
+            error = "",
+            warn = "",
+            hint = "󰈾",
+            info = "",
         })
 
         lsp.setup()
@@ -37,8 +51,6 @@ return {
             virtual_text = true,
         })
 
-        lspconfig.clangd.setup {
-        }
 
         vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: hover" })
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: goto definition" })

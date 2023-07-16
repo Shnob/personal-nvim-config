@@ -5,7 +5,7 @@ return {
         dependencies = { "stevearc/overseer.nvim" },
         config = function(_, opts) require("compiler").setup(opts) end,
     },
-    {                                                  -- The framework we use to run tasks
+    {                                                        -- The framework we use to run tasks
         "stevearc/overseer.nvim",
         commit = "3047ede61cc1308069ad1184c0d447ebee92d749", -- Recommended to to avoid breaking changes
         cmd = { "CompilerOpen", "CompilerToggleResults" },

@@ -6,7 +6,6 @@ return {
     "ThePrimeagen/vim-be-good",
 
     --"nvim-tree/nvim-tree.lua",
-    { "nvim-tree/nvim-web-devicons",     lazy = true },
 
     "alec-gibson/nvim-tetris",
 
