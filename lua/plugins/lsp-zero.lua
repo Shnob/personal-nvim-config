@@ -25,8 +25,14 @@ return {
             lazy = false,
             dependencies = { { 'rafamadriz/friendly-snippets', lazy = false } },
             config = function()
-                require('luasnip').setup({})
+                local luasnip = require('luasnip')
+                luasnip.setup({})
                 require("luasnip/loaders/from_vscode").lazy_load()
+
+                vim.keymap.set({ 's', 'i' }, '<A-l>', function() if luasnip.jumpable(1) then luasnip.jump(1) end end,
+                    { desc = 'LuaSnip: Next Placeholder' })
+                vim.keymap.set({ 's', 'i' }, '<A-h>', function() if luasnip.jumpable(-1) then luasnip.jump(-1) end end,
+                    { desc = 'LuaSnip: Prev Placeholder' })
             end
         },
 
