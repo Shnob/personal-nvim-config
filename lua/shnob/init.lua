@@ -5,5 +5,6 @@ vim.g.termguicolors = true
 
 --require("shnob.remap")
 require("shnob.set")
+require("shnob.powershell-options")
 require("shnob.lazy")
 require("shnob.remap")
