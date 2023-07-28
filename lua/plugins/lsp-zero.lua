@@ -1,42 +1,53 @@
 return {
     'VonHeikemen/lsp-zero.nvim',
-    lazy = true,
+    lazy = false,
     cmd = 'LspInfo',
     event = { 'VeryLazy' },
     --ft = {"lua", "rust", "c", "cpp", "java", "python"},
     branch = 'v2.x',
     dependencies = {
         -- LSP Support
-        { {
-            'neovim/nvim-lspconfig',
-            config = function()
-                local lspconfig = require('lspconfig')
-                lspconfig.clangd.setup {
-                }
-            end
-        } }, -- Required
-        {
-            -- Optional
-            'williamboman/mason.nvim',
-            build = function()
-                pcall(vim.cmd, 'MasonUpdate')
-            end,
-        },
+        { 'neovim/nvim-lspconfig' },             -- Required
+        { 'williamboman/mason.nvim' },           -- Optional
         { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
         -- Autocompletion
-        { 'hrsh7th/nvim-cmp' },     -- Required
-        { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-        { 'L3MON4D3/LuaSnip' },     -- Required
-        { "nvim-tree/nvim-web-devicons" },
+        { 'hrsh7th/nvim-cmp' },         -- Required
+        { 'hrsh7th/cmp-nvim-lsp' },     -- Required
+        { 'hrsh7th/cmp-buffer' },       -- Optional
+        { 'hrsh7th/cmp-path' },         -- Optional
+        { 'saadparwaiz1/cmp_luasnip' }, -- Optional
+        { 'hrsh7th/cmp-nvim-lua' },     -- Optional
+
+        -- Snippets
+        {
+            'L3MON4D3/LuaSnip',
+            lazy = false,
+            dependencies = { { 'rafamadriz/friendly-snippets', lazy = false } },
+            config = function()
+                require('luasnip').setup({})
+                require("luasnip/loaders/from_vscode").lazy_load()
+            end
+        },
+
+        { 'folke/neodev.nvim' },
     },
     config = function()
-        local lsp = require('lsp-zero')
+        require('neodev').setup({})
+
+        local lsp = require('lsp-zero').preset({
+            manage_nvim_cmp = {
+                set_extra_mappings = true,
+            }
+        })
+        local lspconfig = require('lspconfig')
 
         lsp.preset('recommended')
 
         lsp.ensure_installed({
         })
+
+        lsp.setup()
 
         lsp.set_sign_icons({
             error = "",
@@ -45,20 +56,12 @@ return {
             info = "",
         })
 
-        lsp.configure('gdscript', {
-            force_setup = true,                    -- because the LSP is global. Read more on lsp-zero docs about this.
-            single_file_support = false,
-            cmd = { 'ncat', '127.0.0.1', '6008' }, -- the important trick for Windows!
-            root_dir = require('lspconfig.util').root_pattern('project.godot', '.git'),
-            filetypes = { 'gd', 'gdscript', 'gdscript3' }
-        })
-
-        lsp.setup()
-
         vim.diagnostic.config({
             virtual_text = true,
         })
 
+        lspconfig.clangd.setup {
+        }
 
         vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: hover" })
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: goto definition" })
