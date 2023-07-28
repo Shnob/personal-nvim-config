@@ -1,9 +1,8 @@
 return {
     'VonHeikemen/lsp-zero.nvim',
-    lazy = false,
+    lazy = true,
     cmd = 'LspInfo',
     event = { 'VeryLazy' },
-    --ft = {"lua", "rust", "c", "cpp", "java", "python"},
     branch = 'v2.x',
     dependencies = {
         -- LSP Support
@@ -22,8 +21,7 @@ return {
         -- Snippets
         {
             'L3MON4D3/LuaSnip',
-            lazy = false,
-            dependencies = { { 'rafamadriz/friendly-snippets', lazy = false } },
+            dependencies = { { 'rafamadriz/friendly-snippets' } },
             config = function()
                 local luasnip = require('luasnip')
                 luasnip.setup({})
