@@ -21,7 +21,11 @@ vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 50
 
-vim.opt.shell = "powershell"
+local os = vim.loop.os_uname().sysname
+
+if os == 'Windows_NT' then
+    vim.opt.shell = "powershell"
+end
 
 vim.g.airline_powerline_fonts = true
 
