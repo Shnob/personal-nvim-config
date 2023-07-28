@@ -14,9 +14,9 @@ return {
             start_in_insert = true,
             direction = "float",
             float_opts = {
-                border = "double",
-                width = math.ceil(vim.o.columns * 0.5),
-                height = math.ceil(vim.o.columns * 0.15)
+                border = "curved",
+                --width = math.ceil(vim.o.columns * 0.5),
+                --height = math.ceil(vim.o.columns * 0.15)
             },
         })
     end
