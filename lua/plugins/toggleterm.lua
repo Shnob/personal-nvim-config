@@ -6,7 +6,7 @@ return {
     },
 
     config = function()
-        Set_custom_powershell_options()
+        --Set_custom_powershell_options()
 
         local toggleterm = require("toggleterm")
         toggleterm.setup({

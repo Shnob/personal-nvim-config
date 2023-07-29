@@ -25,8 +25,8 @@ return {
                     { 'mode', separator = { left = '', right = '' }, padding = 2 },
                 },
                 lualine_b = {
-                    { 'branch', padding = { left = 2 }, },
-                    'diff',
+                    { 'branch', padding = { left = 2, right = 1 }, },
+                    { 'diff',   padding = { left = 0, right = 1 }, },
                     'diagnostics',
                 },
                 lualine_c = { 'filename' },

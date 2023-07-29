@@ -24,6 +24,7 @@ vim.opt.updatetime = 50
 local os = vim.loop.os_uname().sysname
 
 if os == 'Windows_NT' then
+    Set_custom_powershell_options()
     vim.opt.shell = "powershell"
 end
 
