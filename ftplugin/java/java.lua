@@ -19,15 +19,15 @@ local config = {
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
 
         -- 💀 Done
-        -- '-jar', 'C:/Program Files/Java/jdt-language-server-1.9.0-202203031534/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-        '-jar', install_root_dir = vim.fn.stdpath "data" .. "mason/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+        '-jar', 'C:/Program Files/Java/jdt-language-server-1.9.0-202203031534/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
+        -- '-jar', install_root_dir = vim.fn.stdpath "data" .. "mason/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
         -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                                                    ^^^^^^^^^^^^^^
         -- Must point to the                                                                                  Change this to
         -- eclipse.jdt.ls installation                                                                        the actual version
 
 
         -- 💀 Done
-        '-configuration', vim.fn.stdpath 'data' .. 'packages/jdtls/config_linux/',
+        '-configuration', vim.fn.stdpath 'data' .. 'packages/jdtls/config_win/',
         -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                ^^^^^^
         -- Must point to the                                              Change to one of `linux`, `win` or `mac`
         -- eclipse.jdt.ls installation                                    Depending on your system.
