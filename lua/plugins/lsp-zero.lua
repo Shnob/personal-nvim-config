@@ -39,16 +39,27 @@ return {
     config = function()
         require('neodev').setup({})
 
-        local lsp = require('lsp-zero').preset({
+        local lsp = require('lsp-zero')
+
+        lsp.preset({
             manage_nvim_cmp = {
                 set_extra_mappings = true,
             }
         })
+
         local lspconfig = require('lspconfig')
 
         lsp.preset('recommended')
 
         lsp.ensure_installed({
+        })
+
+        lsp.configure('gdscript', {
+            force_setup = true,          -- because the LSP is global. Read more on lsp-zero docs about this.
+            single_file_support = false,
+            cmd = { 'ncat', '127.0.0.1', '6008' }, -- the important trick for Windows!
+            root_dir = require('lspconfig.util').root_pattern('project.godot', '.git'),
+            filetypes = { 'gd', 'gdscript', 'gdscript3' }
         })
 
         lsp.setup()
