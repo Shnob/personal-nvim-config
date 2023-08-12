@@ -38,10 +38,10 @@ vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to de
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
-vim.cmd [[
-augroup remember_folds
-  autocmd!
-  autocmd BufWrite * mkview
-  autocmd BufRead * silent! loadview
-augroup END
-]]
+--vim.cmd [[
+--augroup remember_folds
+--  autocmd!
+--  autocmd BufWrite * mkview
+--  autocmd BufRead * silent! loadview
+--augroup END
+--]]
