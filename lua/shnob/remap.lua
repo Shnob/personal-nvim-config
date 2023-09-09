@@ -17,3 +17,6 @@ vim.keymap.set("n", "<leader>tp", vim.cmd.tabp, {desc = "Prev tab"})
 vim.keymap.set("n", "<leader>tc", vim.cmd.tabclose, {desc = "Close tab"})
 
 vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>");
+
+vim.keymap.set("n", "<leader>/", "<cmd>noh<CR>", {desc = "Clear search"})
+vim.keymap.set("n", "<esc>", "<cmd>noh<CR>", {desc = "Clear search"})

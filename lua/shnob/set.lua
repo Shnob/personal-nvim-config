@@ -21,6 +21,8 @@ vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 50
 
+vim.opt.hlsearch = true
+
 local os = vim.loop.os_uname().sysname
 
 if os == 'Windows_NT' then
