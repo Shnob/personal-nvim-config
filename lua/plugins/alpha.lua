@@ -30,7 +30,7 @@ return {
             "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
         }
         dashboard.section.buttons.val = {
-            dashboard.button("h", "  New file", ":ene <BAR> startinsert <CR>"),
+            dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
             dashboard.button("e", "  Open netrw", ":Ex <CR>"),
             dashboard.button("f", "󰮗  Find file", ":Telescope find_files<CR>"),
             dashboard.button("j", "  Git files", ":Telescope git_files<CR>"),
