@@ -3,7 +3,7 @@ return {
     lazy = true,
     cmd = 'LspInfo',
     event = { 'VeryLazy' },
-    branch = 'v2.x',
+    branch = 'v3.x',
     dependencies = {
         -- LSP Support
         { 'neovim/nvim-lspconfig' },             -- Required
@@ -39,32 +39,57 @@ return {
     config = function()
         require('neodev').setup({})
 
-        local lsp = require('lsp-zero')
+        local lsp_zero = require('lsp-zero')
 
-        lsp.preset({
+        require('mason').setup({})
+
+        lsp_zero.preset({
             manage_nvim_cmp = {
-                set_extra_mappings = true,
+                --set_extra_mappings = true,
             }
         })
 
         local lspconfig = require('lspconfig')
 
-        lsp.preset('recommended')
+        lsp_zero.preset('recommended')
 
-        lsp.ensure_installed({
+        require('mason-lspconfig').setup({
+            ensure_installed = {
+                'lua_ls',
+            },
+            handlers = {
+                lsp_zero.default_setup,
+--                lua_ls = function()
+--                    local lua_opts = lsp_zero.nvim_lua_ls()
+--
+--                    for k, v in pairs(lua_opts.settings.Lua.workspace) do
+--                        -- print(k .. " : ".. tostring(v))
+--                    end
+--                    lua_opts.settings.Lua.workspace.checkThirdParty = "Disable"
+--
+--                    require('lspconfig').lua_ls.setup(lua_opts)
+--                end,
+            }
         })
 
-        lsp.configure('gdscript', {
-            force_setup = true,                    -- because the LSP is global. Read more on lsp-zero docs about this.
-            single_file_support = false,
-            cmd = { 'ncat', '127.0.0.1', '6008' }, -- the important trick for Windows!
-            root_dir = require('lspconfig.util').root_pattern('project.godot', '.git'),
-            filetypes = { 'gd', 'gdscript', 'gdscript3' }
+        local cmp = require('cmp')
+
+        cmp.setup({
+            mapping = cmp.mapping.preset.insert({
+            }),
         })
 
-        lsp.setup()
+        -- lsp_zero.configure('gdscript', {
+        --     force_setup = true,                    -- because the LSP is global. Read more on lsp-zero docs about this.
+        --     single_file_support = false,
+        --     cmd = { 'ncat', '127.0.0.1', '6008' }, -- the important trick for Windows!
+        --     root_dir = require('lspconfig.util').root_pattern('project.godot', '.git'),
+        --     filetypes = { 'gd', 'gdscript', 'gdscript3' }
+        -- })
 
-        lsp.set_sign_icons({
+        lsp_zero.setup()
+
+        lsp_zero.set_sign_icons({
             error = "",
             warn = "",
             hint = "󰈾",
