@@ -1,7 +1,6 @@
 return {
     'VonHeikemen/lsp-zero.nvim',
     lazy = true,
-    cmd = 'LspInfo',
     event = { 'VeryLazy' },
     branch = 'v3.x',
     dependencies = {
@@ -18,6 +17,8 @@ return {
         { 'saadparwaiz1/cmp_luasnip' }, -- Optional
         { 'hrsh7th/cmp-nvim-lua' },     -- Optional
 
+        { 'nvim-lua/lsp-status.nvim' }, -- Optional
+
         -- Snippets
         {
             'L3MON4D3/LuaSnip',
@@ -25,7 +26,7 @@ return {
             config = function()
                 local luasnip = require('luasnip')
                 luasnip.setup({})
-                require("luasnip/loaders/from_vscode").lazy_load()
+                require("luasnip.loaders.from_vscode").lazy_load()
 
                 vim.keymap.set({ 's', 'i' }, '<A-l>', function() if luasnip.jumpable(1) then luasnip.jump(1) end end,
                     { desc = 'LuaSnip: Next Placeholder' })
@@ -34,10 +35,10 @@ return {
             end
         },
 
-        { 'folke/neodev.nvim' },
+        -- { 'folke/neodev.nvim' },
     },
     config = function()
-        require('neodev').setup({})
+        -- require('neodev').setup({})
 
         local lsp_zero = require('lsp-zero')
 
@@ -59,16 +60,16 @@ return {
             },
             handlers = {
                 lsp_zero.default_setup,
---                lua_ls = function()
---                    local lua_opts = lsp_zero.nvim_lua_ls()
---
---                    for k, v in pairs(lua_opts.settings.Lua.workspace) do
---                        -- print(k .. " : ".. tostring(v))
---                    end
---                    lua_opts.settings.Lua.workspace.checkThirdParty = "Disable"
---
---                    require('lspconfig').lua_ls.setup(lua_opts)
---                end,
+                --                lua_ls = function()
+                --                    local lua_opts = lsp_zero.nvim_lua_ls()
+                --
+                --                    for k, v in pairs(lua_opts.settings.Lua.workspace) do
+                --                        -- print(k .. " : ".. tostring(v))
+                --                    end
+                --                    lua_opts.settings.Lua.workspace.checkThirdParty = "Disable"
+                --
+                --                    require('lspconfig').lua_ls.setup(lua_opts)
+                --                end,
             }
         })
 
@@ -92,7 +93,7 @@ return {
         lsp_zero.set_sign_icons({
             error = "",
             warn = "",
-            hint = "󰈾",
+            hint = "󰌶",
             info = "",
         })
 
@@ -101,6 +102,13 @@ return {
         })
 
         lspconfig.clangd.setup {
+            cmd = {
+                "clangd",
+                "--offset-encoding=utf-16",
+            }
+        }
+
+        lspconfig.ocamllsp.setup {
         }
 
         vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: hover" })

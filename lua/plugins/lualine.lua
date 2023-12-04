@@ -30,12 +30,31 @@ return {
                     { 'diff',   padding = { left = 0, right = 1 }, },
                     'diagnostics',
                 },
-                lualine_c = { 'filename' },
-                lualine_x = {
-                    'filetype',
-                    { 'fileformat', padding = { left = 1, right = 2 }, },
+                lualine_c = {
+                    {
+                        'filename',
+                        symbols = {
+                            modified = '󰲶',
+                            readonly = '󰍁',
+                        }
+                    }
                 },
-                lualine_y = { 'filesize' },
+                lualine_x = {
+                    { 'filetype', padding = { left = 1, right = 2 }, },
+                    {
+                        function()
+                            local clients = vim.lsp.get_active_clients()
+                            for i, c in pairs(clients) do
+                                if c.name ~= 'copilot' then
+                                    return c.name
+                                end
+                            end
+                            return ''
+                        end,
+                        padding = { left = 0, right = 1 },
+                    }
+                },
+                lualine_y = { 'filesize', 'fileformat' },
                 lualine_z = {
                     { 'progress', padding = { left = 2, right = 1 }, },
                     { 'location', separator = { left = '', right = '' }, padding = { left = 0, right = 2 }, },
