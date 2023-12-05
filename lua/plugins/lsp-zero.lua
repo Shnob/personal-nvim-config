@@ -5,19 +5,24 @@ return {
     branch = 'v3.x',
     dependencies = {
         -- LSP Support
-        { 'neovim/nvim-lspconfig' },             -- Required
-        { 'williamboman/mason.nvim' },           -- Optional
-        { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+        { 'neovim/nvim-lspconfig' },
+        { 'williamboman/mason.nvim' },
+        { 'williamboman/mason-lspconfig.nvim' },
 
         -- Autocompletion
-        { 'hrsh7th/nvim-cmp' },         -- Required
-        { 'hrsh7th/cmp-nvim-lsp' },     -- Required
-        { 'hrsh7th/cmp-buffer' },       -- Optional
-        { 'hrsh7th/cmp-path' },         -- Optional
-        { 'saadparwaiz1/cmp_luasnip' }, -- Optional
-        { 'hrsh7th/cmp-nvim-lua' },     -- Optional
+        {
+            'hrsh7th/nvim-cmp',
+            dependencies = {
+                { 'onsails/lspkind.nvim' },
+            },
+        },
+        { 'hrsh7th/cmp-nvim-lsp' },
+        { 'hrsh7th/cmp-buffer' },
+        { 'hrsh7th/cmp-path' },
+        { 'saadparwaiz1/cmp_luasnip' },
+        { 'hrsh7th/cmp-nvim-lua' },
 
-        { 'nvim-lua/lsp-status.nvim' }, -- Optional
+        { 'nvim-lua/lsp-status.nvim' },
 
         -- Snippets
         {
@@ -52,6 +57,42 @@ return {
             ensure_installed = { 'lua_ls' },
             handlers = {
                 lsp_zero.default_setup,
+            },
+        })
+
+        local cmp = require('cmp')
+
+        cmp.setup({
+            snippet = {
+                expand = function(args)
+                    require('luasnip').lsp_expand(args.body)
+                end,
+            },
+            sources = {
+                { name = 'nvim_lsp' },
+                { name = 'buffer' },
+                { name = 'path' },
+                { name = 'luasnip' },
+                { name = 'nvim_lua' },
+            },
+            window = {
+                completion = {
+                    --winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+                    col_offset = -3,
+                    side_padding = 0,
+                },
+            },
+            formatting = {
+                fields = { "kind", "abbr", "menu" },
+                format = function(entry, vim_item)
+                    local kind = require("lspkind")
+                        .cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+                    local strings = vim.split(kind.kind, "%s", { trimempty = true })
+                    kind.kind = " " .. (strings[1] or "") .. " "
+                    kind.menu = "    (" .. (strings[2] or "") .. ")"
+
+                    return kind
+                end,
             },
         })
 
