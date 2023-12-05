@@ -23,12 +23,10 @@ return {
             },
             sections = {
                 lualine_a = {
-                    { 'mode', separator = { left = '', right = '' }, padding = 3 },
+                    { 'mode', separator = { left = '', right = '' }, padding = 2 },
                 },
                 lualine_b = {
-                    { 'branch', padding = { left = 2, right = 1 }, },
-                    { 'diff',   padding = { left = 0, right = 1 }, },
-                    'diagnostics',
+                    { 'branch', padding = { left = 1, right = 1 }, },
                 },
                 lualine_c = {
                     {
@@ -37,10 +35,17 @@ return {
                             modified = '󰲶',
                             readonly = '󰍁',
                         }
-                    }
+                    },
+                    { 'diff', padding = { left = 0, right = 0 }, },
                 },
                 lualine_x = {
-                    { 'filetype', padding = { left = 1, right = 2 }, },
+                    { 'filetype', padding = { left = 1, right = 1 }, },
+                    {
+                        'fileformat',
+                        padding = { left = 0, right = 1 },
+                    },
+                },
+                lualine_y = {
                     {
                         function()
                             local clients = vim.lsp.get_active_clients()
@@ -51,13 +56,16 @@ return {
                             end
                             return ''
                         end,
+                        padding = { left = 1, right = 1 },
+                    },
+                    {
+                        'diagnostics',
                         padding = { left = 0, right = 1 },
-                    }
+                    },
                 },
-                lualine_y = { 'filesize', 'fileformat' },
                 lualine_z = {
-                    { 'progress', padding = { left = 2, right = 1 }, },
-                    { 'location', separator = { left = '', right = '' }, padding = { left = 0, right = 2 }, },
+                    { 'progress', padding = { left = 1, right = 0 }, },
+                    { 'location', separator = { left = '', right = '' }, padding = { left = 0, right = 1 }, },
                 }
             },
             inactive_sections = {
