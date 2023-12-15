@@ -22,7 +22,7 @@ return {
         { 'saadparwaiz1/cmp_luasnip' },
         { 'hrsh7th/cmp-nvim-lua' },
 
-        { 'nvim-lua/lsp-status.nvim' },
+        { 'weilbith/nvim-code-action-menu' },
 
         -- Snippets
         {
@@ -43,10 +43,24 @@ return {
                     { desc = 'LuaSnip: Prev Placeholder' })
             end
         },
+        { "Freedzone/kerbovim" },
     },
     config = function()
         local lsp_zero = require('lsp-zero')
         local lspconfig = require('lspconfig')
+
+        require('lspconfig.configs').kos_lsp = {
+            default_config = {
+                cmd = { "kls" },
+                filetypes = { 'kerboscript' },
+                single_file_support = true,
+                settings = {},
+            },
+        }
+
+        lspconfig.kos_lsp.setup({
+            cmd = { "kls" },
+        })
 
         lsp_zero.on_attach(function(client, bufnr)
             lsp_zero.default_keymaps({ buffer = bufnr })
@@ -77,7 +91,7 @@ return {
             },
             window = {
                 completion = {
-                    --winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+                    -- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
                     col_offset = -3,
                     side_padding = 0,
                 },
@@ -110,6 +124,10 @@ return {
             }
         }
 
+        lspconfig.bashls.setup {
+            single_file_support = true,
+        }
+
         -- Customization for Pmenu
         vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#282C34", fg = "NONE" })
         vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "#22252A" })
@@ -123,13 +141,13 @@ return {
         vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = "#EED8DA", bg = "#B5585F" })
         vim.api.nvim_set_hl(0, "CmpItemKindEvent", { fg = "#EED8DA", bg = "#B5585F" })
 
-        vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#C3E88D", bg = "#9FBD73" })
-        vim.api.nvim_set_hl(0, "CmpItemKindEnum", { fg = "#C3E88D", bg = "#9FBD73" })
-        vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = "#C3E88D", bg = "#9FBD73" })
+        vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#D3E8DD", bg = "#9FBD73" })
+        vim.api.nvim_set_hl(0, "CmpItemKindEnum", { fg = "#D3E8DD", bg = "#9FBD73" })
+        vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = "#D3E8DD", bg = "#9FBD73" })
 
-        vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = "#FFE082", bg = "#D4BB6C" })
-        vim.api.nvim_set_hl(0, "CmpItemKindConstructor", { fg = "#FFE082", bg = "#D4BB6C" })
-        vim.api.nvim_set_hl(0, "CmpItemKindReference", { fg = "#FFE082", bg = "#D4BB6C" })
+        vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = "#FFFFE8", bg = "#D4BB6C" })
+        vim.api.nvim_set_hl(0, "CmpItemKindConstructor", { fg = "#FFFFE8", bg = "#D4BB6C" })
+        vim.api.nvim_set_hl(0, "CmpItemKindReference", { fg = "#FFFFE8", bg = "#D4BB6C" })
 
         vim.api.nvim_set_hl(0, "CmpItemKindFunction", { fg = "#EADFF0", bg = "#A377BF" })
         vim.api.nvim_set_hl(0, "CmpItemKindStruct", { fg = "#EADFF0", bg = "#A377BF" })
@@ -140,9 +158,9 @@ return {
         vim.api.nvim_set_hl(0, "CmpItemKindVariable", { fg = "#C5CDD9", bg = "#7E8294" })
         vim.api.nvim_set_hl(0, "CmpItemKindFile", { fg = "#C5CDD9", bg = "#7E8294" })
 
-        vim.api.nvim_set_hl(0, "CmpItemKindUnit", { fg = "#F5EBD9", bg = "#D4A959" })
-        vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { fg = "#F5EBD9", bg = "#D4A959" })
-        vim.api.nvim_set_hl(0, "CmpItemKindFolder", { fg = "#F5EBD9", bg = "#D4A959" })
+        vim.api.nvim_set_hl(0, "CmpItemKindUnit", { fg = "#F5F5F5", bg = "#D4A959" })
+        vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { fg = "#F5F5F5", bg = "#D4A959" })
+        vim.api.nvim_set_hl(0, "CmpItemKindFolder", { fg = "#F5F5F5", bg = "#D4A959" })
 
         vim.api.nvim_set_hl(0, "CmpItemKindMethod", { fg = "#DDE5F5", bg = "#6C8ED4" })
         vim.api.nvim_set_hl(0, "CmpItemKindValue", { fg = "#DDE5F5", bg = "#6C8ED4" })
