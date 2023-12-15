@@ -47,6 +47,15 @@ vim.cmd [[
     highlight Folded ctermbg=NONE guibg=NONE
 ]]
 
+-- Set indent width to 2 in ocaml
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "ocaml",
+    callback = function()
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.tabstop = 2
+    end
+})
+
 --vim.cmd [[
 --augroup remember_folds
 --  autocmd!
