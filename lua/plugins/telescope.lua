@@ -11,6 +11,8 @@ return
         { '<leader>fr', "<cmd>Telescope lsp_references<cr>",      { desc = "Tele: Lsp references" } },
         { '<leader>fd', "<cmd>Telescope lsp_definitions<cr>",     { desc = "Tele: Lsp definitions" } },
         { '<leader>fm', "<cmd>Telescope lsp_implementations<cr>", { desc = "Tele: Lsp implementations" } },
+        { '<leader>fl', "<cmd>Telescope diagnostics<cr>", { desc = "Tele: Lsp diagnostics" } },
+        { '<leader>fk', "<cmd>Telescope buffers<cr>", { desc = "Tele: buffers" } },
     },
     --
     --    config = function ()
