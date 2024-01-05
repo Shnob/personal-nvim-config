@@ -48,8 +48,9 @@ return {
                 lualine_y = {
                     {
                         function()
-                            local clients = vim.lsp.get_active_clients()
-                            for i, c in pairs(clients) do
+                            local bufnr = vim.api.nvim_get_current_buf()
+                            local clients = vim.lsp.buf_get_clients(bufnr)
+                            for _, c in pairs(clients) do
                                 if c.name ~= 'copilot' then
                                     return c.name
                                 end
