@@ -105,8 +105,8 @@ return {
                         cmp.complete()
                     end
                 end,
-                ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-                ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-d>'] = cmp.mapping.scroll_docs(4),
                 ['<C-e>'] = cmp.mapping.close(),
             }),
             sources = {
@@ -121,15 +121,19 @@ return {
                     scrollbar = false,
                     col_offset = -1,
                 }),
+                documentation = cmp.config.window.bordered({
+                    scrollbar = false,
+                }),
             },
             formatting = {
-                fields = { "abbr", "kind", "menu" },
+                fields = { "abbr", "kind" },
                 format = function(entry, vim_item)
                     local kind = require("lspkind")
                         .cmp_format({ mode = "symbol", maxwidth = 30 })(entry, vim_item)
                     local strings = vim.split(kind.kind, "%s", { trimempty = true })
                     kind.kind = (strings[1] or "")
                     -- kind.menu = "    (" .. (strings[2] or "") .. ")"
+                    kind.menu = ""
 
                     return kind
                 end,
