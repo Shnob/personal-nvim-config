@@ -4,27 +4,23 @@ return {
     },
 
     {
-        "pineapplegiant/spaceduck",
+        "junegunn/seoul256.vim",
     },
 
     {
-        "ellisonleao/gruvbox.nvim",
+        "liuchengxu/space-vim-dark",
     },
 
     {
-        "catppuccin/nvim",
+        "tlhr/anderson.vim",
     },
 
     {
-        "rose-pine/neovim",
+        "chriskempson/vim-tomorrow-theme",
     },
 
     {
-        "rebelot/kanagawa.nvim",
-    },
-
-    {
-        "bluz71/vim-moonfly-colors",
+        "flrnd/candid.vim",
     },
 
     {
