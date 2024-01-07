@@ -9,3 +9,5 @@ require("shnob.powershell-options")
 require("shnob.set")
 require("shnob.lazy")
 require("shnob.remap")
+
+vim.cmd.colorscheme("tokyonight-moon")
