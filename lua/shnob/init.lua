@@ -11,4 +11,4 @@ require("shnob.colorscheme-settings")
 require("shnob.lazy")
 require("shnob.remap")
 
-vim.cmd.colorscheme("tokyonight-moon")
+vim.cmd.colorscheme("seoul256")
