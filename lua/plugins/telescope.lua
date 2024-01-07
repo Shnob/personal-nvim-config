@@ -13,6 +13,7 @@ return
         { '<leader>fm', "<cmd>Telescope lsp_implementations<cr>", { desc = "Tele: Lsp implementations" } },
         { '<leader>fl', "<cmd>Telescope diagnostics<cr>",         { desc = "Tele: Lsp diagnostics" } },
         { '<leader>fk', "<cmd>Telescope buffers<cr>",             { desc = "Tele: buffers" } },
+        { '<leader>fc', "<cmd>Telescope colorscheme<cr>",         { desc = "Tele: colorscheme" } },
     },
     opts = {
         defaults = {
