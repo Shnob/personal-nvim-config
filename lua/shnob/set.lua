@@ -63,8 +63,7 @@ vim.api.nvim_create_autocmd("FileType", {
 --]]
 
 vim.g.set_extra_colorscheme_settings = function()
-    if true then
-        vim.cmd [[
+    vim.cmd [[
             hi Folded ctermbg=NONE guibg=NONE
             hi NormalFloat ctermbg=NONE guibg=NONE
             hi FloatBorder ctermbg=NONE guibg=NONE
@@ -83,11 +82,13 @@ vim.g.set_extra_colorscheme_settings = function()
             hi NotifyTRACEBorder ctermbg=NONE guibg=NONE
             hi TreeSitterContext ctermbg=NONE guibg=NONE
         ]]
-    end
 end
 
 vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function()
-        vim.g.set_extra_colorscheme_settings()
+        if type(vim.g.transparent_enabled) == "boolean"
+            and vim.g.transparent_enabled then
+            vim.g.set_extra_colorscheme_settings()
+        end
     end
 })
