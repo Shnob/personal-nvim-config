@@ -1,13 +1,29 @@
 return {
-    "folke/tokyonight.nvim",
+    {
+        "folke/tokyonight.nvim",
+    },
 
-    -- "pineapplegiant/spaceduck",
-    -- config = function ()
-    --     vim.cmd.colorscheme("spaceduck")
-    -- end
+    {
+        "pineapplegiant/spaceduck",
+    },
 
-    -- "ellisonleao/gruvbox.nvim",
-    -- config = function()
-    --     vim.cmd.colorscheme("gruvbox")
-    -- end
+    {
+        "ellisonleao/gruvbox.nvim",
+    },
+
+    {
+        "catppuccin/nvim",
+    },
+
+    {
+        "rose-pine/neovim",
+    },
+
+    {
+        "rebelot/kanagawa.nvim",
+    },
+
+    {
+        "bluz71/vim-moonfly-colors",
+    },
 }
