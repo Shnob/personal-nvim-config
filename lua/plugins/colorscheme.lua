@@ -26,4 +26,12 @@ return {
     {
         "bluz71/vim-moonfly-colors",
     },
+
+    {
+        "RRethy/nvim-base16",
+    },
+
+    {
+        "luisiacc/the-matrix.nvim",
+    },
 }

@@ -81,6 +81,7 @@ vim.g.set_extra_colorscheme_settings = function()
             hi NotifyDEBUGBorder ctermbg=NONE guibg=NONE
             hi NotifyTRACEBorder ctermbg=NONE guibg=NONE
             hi TreeSitterContext ctermbg=NONE guibg=NONE
+            hi WinSeparator ctermbg=NONE guibg=NONE
         ]]
 end
 
