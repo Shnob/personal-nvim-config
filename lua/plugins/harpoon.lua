@@ -1,12 +1,16 @@
 return
 {
     "ThePrimeagen/harpoon",
-    -- lazy = true,
+    lazy = true,
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-        require('harpoon'):setup({ settings = { save_on_toggle = true } })
-    end,
+
+    opts = {
+        settings = {
+            save_on_toggle = true,
+        }
+    },
+
     keys = {
         { "<leader>ha", function() require('harpoon'):list():append() end,                                 { desc = "Harpoon: mark" } },
         { "<leader>hh", function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end, { desc = "Harpoon: menu" } },

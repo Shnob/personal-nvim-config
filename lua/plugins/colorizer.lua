@@ -8,7 +8,5 @@ return {
         { "<leader>c", "<cmd>ColorizerToggle<CR>", { noremap = true, silent = true } },
     },
 
-    config = function()
-        require("colorizer").setup()
-    end,
+    opts = {},
 }
