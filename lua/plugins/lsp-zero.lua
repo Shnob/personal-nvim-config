@@ -63,6 +63,20 @@ return {
             cmd = { "kls" },
         })
 
+        require('lspconfig.configs').cl_lsp = {
+            default_config = {
+                cmd = { "cl-lsp" },
+                filetypes = { 'lisp' },
+                single_file_support = true,
+                settings = {},
+            },
+        }
+
+        lspconfig.cl_lsp.setup({
+            name = "cl-lsp",
+            cmd = { "cl-lsp" },
+        })
+
         lsp_zero.on_attach(function(_, bufnr)
             lsp_zero.default_keymaps({ buffer = bufnr })
         end)
