@@ -3,8 +3,6 @@ return {
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {
         restricted_keys = {
-            ["<Up>"] = { "n", "x" },
-            ["<Down>"] = { "n", "x" },
             ["<Left>"] = { "n", "x" },
             ["<Right>"] = { "n", "x" },
         },
@@ -13,6 +11,9 @@ return {
             ["<Down>"] = {},
             ["<Left>"] = {},
             ["<Right>"] = {},
-        }
+        },
+        disabled_filetypes = {
+            "Outline",
+        },
     },
 }
