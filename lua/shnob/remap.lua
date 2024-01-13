@@ -20,3 +20,5 @@ vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>");
 
 vim.keymap.set("n", "<leader>/", "<cmd>noh<CR>", {desc = "Clear search"})
 vim.keymap.set("n", "<esc>", "<cmd>noh<CR>", {desc = "Clear search"})
+
+vim.keymap.set("n", "<leader>s", "<cmd>set spell!<CR>", {desc = "Toggle spell check"})

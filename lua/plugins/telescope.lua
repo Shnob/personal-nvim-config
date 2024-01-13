@@ -14,6 +14,7 @@ return
         { '<leader>fl', "<cmd>Telescope diagnostics<cr>",         { desc = "Tele: Lsp diagnostics" } },
         { '<leader>fk', "<cmd>Telescope buffers<cr>",             { desc = "Tele: buffers" } },
         { '<leader>fc', "<cmd>Telescope colorscheme<cr>",         { desc = "Tele: colorscheme" } },
+        { '<leader>fz', "<cmd>Telescope spell_suggest<cr>",       { desc = "Tele: colorscheme" } },
     },
     opts = {
         defaults = {
