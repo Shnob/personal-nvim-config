@@ -14,6 +14,7 @@ return {
         },
         disabled_filetypes = {
             "Outline",
+            "netrw",
         },
     },
 }
