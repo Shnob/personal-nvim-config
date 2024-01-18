@@ -134,6 +134,10 @@ return {
 
         ins_lualine {
             'filename',
+            symbols = {
+                modified = '󰲶',
+                readonly = '󰍁',
+            },
             cond = conditions.buffer_not_empty,
             color = { fg = colors.magenta, gui = 'bold' },
         }
@@ -257,6 +261,10 @@ return {
 
         ins_inactive {
             'filename',
+            symbols = {
+                modified = '󰲶',
+                readonly = '󰍁',
+            },
             cond = conditions.buffer_not_empty,
             color = { fg = colors.cyan },
         }
