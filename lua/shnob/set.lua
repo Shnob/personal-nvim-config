@@ -21,6 +21,8 @@ vim.opt.updatetime = 50
 
 vim.opt.hlsearch = true
 
+vim.opt.wrap = false
+
 local os = vim.loop.os_uname().sysname
 
 if os == 'Windows_NT' then
@@ -82,6 +84,13 @@ vim.g.set_extra_colorscheme_settings_transparent = function()
         hi NotifyTRACEBorder ctermbg=NONE guibg=NONE
         hi TreeSitterContext ctermbg=NONE guibg=NONE
         hi WinSeparator ctermbg=NONE guibg=NONE
+        hi DiagnosticVirtualTextError ctermbg=NONE guibg=NONE
+        hi DiagnosticVirtualTextWarn ctermbg=NONE guibg=NONE
+        hi DiagnosticVirtualTextInfo ctermbg=NONE guibg=NONE
+        hi DiagnosticVirtualTextHint ctermbg=NONE guibg=NONE
+        hi TabLine ctermbg=NONE guibg=NONE
+        hi TabLineFill ctermbg=NONE guibg=NONE
+        hi TabLineSel ctermbg=NONE guibg=NONE
     ]]
 end
 
