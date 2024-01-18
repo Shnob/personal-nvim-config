@@ -253,6 +253,14 @@ return {
             cond = conditions.hide_in_width,
         }
 
+        --- INACTIVE ---
+
+        ins_inactive {
+            'filename',
+            cond = conditions.buffer_not_empty,
+            color = { fg = colors.cyan },
+        }
+
         -- Now don't forget to initialize lualine
         lualine.setup(config)
     end
