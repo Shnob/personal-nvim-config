@@ -7,6 +7,7 @@ vim.g.termguicolors = true
 --require("shnob.remap")
 require("shnob.powershell-options")
 require("shnob.set")
+require("shnob.colorscheme-settings")
 require("shnob.lazy")
 require("shnob.remap")
 
