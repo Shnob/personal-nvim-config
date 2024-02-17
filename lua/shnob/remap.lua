@@ -22,3 +22,5 @@ vim.keymap.set("n", "<leader>/", "<cmd>noh<CR>", {desc = "Clear search"})
 vim.keymap.set("n", "<esc>", "<cmd>noh<CR>", {desc = "Clear search"})
 
 vim.keymap.set("n", "<leader>s", "<cmd>set spell!<CR>", {desc = "Toggle spell check"})
+
+vim.keymap.set("i", "jk", "<esc>", {desc = "jk to escape"})
