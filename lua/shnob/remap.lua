@@ -24,3 +24,6 @@ vim.keymap.set("n", "<esc>", "<cmd>noh<CR>", {desc = "Clear search"})
 vim.keymap.set("n", "<leader>s", "<cmd>set spell!<CR>", {desc = "Toggle spell check"})
 
 vim.keymap.set("i", "jk", "<esc>", {desc = "jk to escape"})
+
+vim.keymap.set("n", "<C-h>", "<cmd>Copilot disable<CR>", {desc = "Copilot: Disable"})
+vim.keymap.set("i", "<C-h>", "<cmd>Copilot disable<CR>", {desc = "Copilot: Disable"})
