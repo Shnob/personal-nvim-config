@@ -25,7 +25,10 @@ return {
                     guibg = 'NONE',
                     guifg = props.focused and '#c678dd' or '#777777',
                 }
-            end
+            end,
+            hide = {
+                focused_win = true,
+            }
         })
     end,
 }
