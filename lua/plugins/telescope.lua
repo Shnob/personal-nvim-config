@@ -18,6 +18,7 @@ return
         { '<leader>fc', "<cmd>Telescope colorscheme<cr>",         { desc = "Tele: colorscheme" } },
         { '<leader>fz', "<cmd>Telescope spell_suggest<cr>",       { desc = "Tele: colorscheme" } },
         { '<leader>fo', "<cmd>Telescope oldfiles<cr>",            { desc = "Tele: oldfiles" } },
+        { '<leader>fg', "<cmd>Telescope live_grep<cr>",           { desc = "Tele: live grep" } },
     },
     opts = {
         defaults = {
