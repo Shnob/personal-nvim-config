@@ -16,6 +16,7 @@ return {
             "Outline",
             "netrw",
             "harpoon",
+            "mason",
         },
     },
 }
