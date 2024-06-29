@@ -2,9 +2,11 @@ return
 {
     'nvim-telescope/telescope.nvim',
     lazy = true,
-    tag = '0.1.2',
     cmd = { "Telescope" },
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    },
     keys = {
         { '<leader>ff', "<cmd>Telescope find_files<cr>",          { desc = "Tele: find files" } },
         { '<leader>fj', "<cmd>Telescope git_files<cr>",           { desc = "Tele: git files" } },
@@ -15,6 +17,8 @@ return
         { '<leader>fk', "<cmd>Telescope buffers<cr>",             { desc = "Tele: buffers" } },
         { '<leader>fc', "<cmd>Telescope colorscheme<cr>",         { desc = "Tele: colorscheme" } },
         { '<leader>fz', "<cmd>Telescope spell_suggest<cr>",       { desc = "Tele: colorscheme" } },
+        { '<leader>fo', "<cmd>Telescope oldfiles<cr>",            { desc = "Tele: oldfiles" } },
+        { '<leader>fg', "<cmd>Telescope live_grep<cr>",           { desc = "Tele: live grep" } },
     },
     opts = {
         defaults = {
@@ -22,6 +26,17 @@ return
             selection_caret = " ➝ ",
             entry_prefix = "   ",
         },
+        --[[
+        extensions = {
+            fzf = {
+                fuzzy = true,                   -- false will only do exact matching
+                override_generic_sorter = true, -- override the generic sorter
+                override_file_sorter = true,    -- override the file sorter
+                case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+                -- the default case_mode is "smart_case"
+            }
+        }
+        ]] --
     },
     --
     --    config = function ()

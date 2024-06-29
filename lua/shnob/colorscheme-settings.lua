@@ -5,6 +5,8 @@ vim.g.set_extra_colorscheme_settings_transparent = function()
         hi FloatBorder ctermbg=NONE guibg=NONE
         hi TelescopeNormal ctermbg=NONE guibg=NONE
         hi TelescopeBorder ctermbg=NONE guibg=NONE
+        hi TelescopePromptBorder ctermbg=NONE guibg=NONE
+        hi TelescopePromptTitle ctermbg=NONE guibg=NONE
         hi NotifyBackground ctermbg=NONE guibg=NONE
         hi NotifyERRORBody ctermbg=NONE guibg=NONE
         hi NotifyWARNBody ctermbg=NONE guibg=NONE

@@ -15,7 +15,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 6
 
 vim.opt.updatetime = 50
 
@@ -63,3 +63,14 @@ vim.api.nvim_create_autocmd("FileType", {
 --  autocmd BufRead * silent! loadview
 --augroup END
 --]]
+
+-- Auto enable useful options for text files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { "markdown", "text" },
+    callback = function()
+        vim.opt_local.wrap = true
+        vim.opt_local.linebreak = true
+        vim.opt_local.spell = true
+    end,
+})
+

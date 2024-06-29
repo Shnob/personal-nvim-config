@@ -38,6 +38,7 @@ return {
         local config = {
             options = {
                 -- Disable sections and component separators
+                globalstatus=true,
                 component_separators = '',
                 section_separators = '',
                 theme = {

@@ -15,6 +15,8 @@ return {
         disabled_filetypes = {
             "Outline",
             "netrw",
+            "harpoon",
+            "mason",
         },
     },
 }
