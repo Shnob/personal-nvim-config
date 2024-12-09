@@ -17,6 +17,7 @@ return {
             "netrw",
             "harpoon",
             "mason",
+            "markdown",
         },
     },
 }
