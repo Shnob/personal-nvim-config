@@ -13,8 +13,8 @@ return {
         leap.opts.safe_labels = {}
 
         vim.cmd([[
-            autocmd ColorScheme * hi! LeapLabelPrimary guifg=#000000 guibg=#fff933
-            autocmd ColorScheme * hi! LeapLabelSecondary guifg=#000000 guibg=#ff4444
+            autocmd ColorScheme * hi! LeapLabel guifg=#000000 guibg=#fff933
+            " autocmd ColorScheme * hi! LeapLabelSecondary guifg=#000000 guibg=#ff4444
         ]])
     end,
 }
