@@ -18,6 +18,7 @@ return {
             "harpoon",
             "mason",
             "markdown",
+            "help",
         },
     },
 }
