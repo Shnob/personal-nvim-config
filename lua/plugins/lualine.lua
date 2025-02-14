@@ -38,7 +38,7 @@ return {
         local config = {
             options = {
                 -- Disable sections and component separators
-                globalstatus=true,
+                globalstatus = true,
                 component_separators = '',
                 section_separators = '',
                 theme = {
@@ -119,18 +119,8 @@ return {
             function()
                 return '▊'
             end,
-            color = { fg = colors.blue },      -- Sets highlighting of component
-            padding = { left = 0, right = 1 }, -- We don't need space before this
-        }
-
-        ins_lualine {
-            -- mode component
-            -- neovim icon
-            function()
-                return ''
-            end,
-            color = color_func,
-            padding = { right = 1 },
+            color = color_func,                -- Sets highlighting of component
+            padding = { left = 0, right = 0 }, -- We don't need space before this
         }
 
         ins_lualine {
@@ -152,52 +142,32 @@ return {
         ins_lualine {
             -- filesize component
             'filesize',
+            color = { fg = colors.green },
             cond = conditions.buffer_not_empty,
-        }
-
-        -- Add components to right sections
-        ins_lualine {
-            'o:encoding',       -- option component same as &encoding in viml
-            fmt = string.upper, -- I'm not sure why it's upper case either ;)
-            cond = conditions.hide_in_width,
-            color = { fg = colors.green, gui = 'bold' },
-        }
-
-        ins_lualine {
-            'fileformat',
-            fmt = string.upper,
-            icons_enabled = false, -- tux pengiun icon
-            color = { fg = colors.green, gui = 'bold' },
         }
 
         ins_lualine { 'location' }
 
         ins_lualine { 'progress', color = { fg = colors.fg } }
 
-        -- -- Insert mid section. You can make any number of sections in neovim :)
-        -- -- for lualine it's any number greater then 2
-        -- ins_lualine {
-        --     function()
-        --         return '%='
-        --     end,
-        -- }
-
         ins_lualine {
             -- Lsp server name .
             function()
-                local msg = '-'
-                local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-                local clients = vim.lsp.get_active_clients()
+                local no_lsp_msg = '-'
+                local clients = vim.lsp.get_clients()
                 if next(clients) == nil then
-                    return msg
+                    return no_lsp_msg
                 end
                 for _, client in ipairs(clients) do
-                    local filetypes = client.config.filetypes
-                    if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+                    if client.name == 'GitHub Copilot' then
+                        goto continue
+                    end
+                    if vim.lsp.buf_is_attached(0, client.id) then
                         return client.name
                     end
+                    ::continue::
                 end
-                return msg
+                return no_lsp_msg
             end,
             icon = '󰒓',
             color = { fg = '#ffffff', gui = 'bold' },
@@ -214,22 +184,14 @@ return {
             },
         }
 
-        -- ins_lualine {
-        --     function()
-        --         return '▊'
-        --     end,
-        --     color = { fg = colors.blue },
-        --     padding = { left = 1 },
-        -- }
-
         --- TABLINE ---
 
         ins_tabline {
             function()
                 return '▊'
             end,
-            color = { fg = colors.blue },      -- Sets highlighting of component
-            padding = { left = 0, right = 1 }, -- We don't need space before this
+            color = color_func,                -- Sets highlighting of component
+            padding = { left = 0, right = 0 }, -- We don't need space before this
         }
 
         ins_tabline {
@@ -242,7 +204,7 @@ return {
 
         ins_tabline {
             'branch',
-            icon = '',
+            icon = '󰘬',
             color = { fg = colors.violet, gui = 'bold' },
         }
 
