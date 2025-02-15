@@ -2,7 +2,7 @@ return {
     'akinsho/toggleterm.nvim',
 
     keys = {
-        {[[<C-|>]]},
+        {[[<C-;>]]},
     },
 
     config = function()
@@ -10,7 +10,7 @@ return {
 
         local toggleterm = require("toggleterm")
         toggleterm.setup({
-            open_mapping = [[<C-|>]],
+            open_mapping = [[<C-;>]],
             start_in_insert = true,
             direction = "float",
             float_opts = {
