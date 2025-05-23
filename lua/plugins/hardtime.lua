@@ -19,6 +19,8 @@ return {
             "mason",
             "markdown",
             "help",
+            "undotree",
+            "lazy",
         },
     },
 }
