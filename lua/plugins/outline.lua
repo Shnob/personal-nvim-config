@@ -8,6 +8,10 @@ return {
         symbols = {
             icon_source = 'lspkind',
         },
+        keymaps = {
+            goto_location = '<S-Cr>',
+            goto_and_close = '<Cr>',
+        },
     },
     keys = {
         { '<leader>o', "<cmd>Outline<cr>", {desc = "Toggle outline"} },
