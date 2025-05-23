@@ -1,5 +1,5 @@
 return {
-    'MeanderingProgrammer/markdown.nvim',
+    'MeanderingProgrammer/render-markdown.nvim',
     main = "render-markdown",
     opts = {
         sign = {
@@ -11,6 +11,7 @@ return {
         code = {
             highlight = "none",
             highlight_inline = "none",
+            highlight_border = "none",
             border = 'thick',
         }
     },
