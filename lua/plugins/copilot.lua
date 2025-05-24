@@ -8,6 +8,8 @@ return {
     },
 
     config = function()
+        vim.g.copilot_no_tab_map = true
+
         vim.api.nvim_set_keymap('i', '<C-j>', 'copilot#Accept("<CR>")', { expr = true, silent = true })
         vim.api.nvim_set_keymap('i', '<M-j>', '<Plug>(copilot-next)', { desc = "Copilot: Next" })
         vim.api.nvim_set_keymap('i', '<M-k>', '<Plug>(copilot-previous)', { desc = "Copilot: Previous" })
