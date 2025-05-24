@@ -18,3 +18,20 @@ vim.keymap.set("i", "jk", "<esc>", {desc = "jk to escape"})
 
 vim.keymap.set("n", "<C-h>", "<cmd>Copilot disable<CR>", {desc = "Copilot: Disable"})
 vim.keymap.set("i", "<C-h>", "<cmd>Copilot disable<CR>", {desc = "Copilot: Disable"})
+
+-- Lsp keymaps
+vim.keymap.set("n", "K",
+    function()
+        vim.lsp.buf.hover({
+            border = 'rounded',
+        })
+    end,
+    { desc = "LSP: Hover" }
+)
+
+vim.keymap.set("n", "gl",
+    function()
+        vim.diagnostic.open_float(nil, {})
+    end,
+    { desc = "LSP: Show line diagnostics" }
+)
