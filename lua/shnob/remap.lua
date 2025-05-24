@@ -35,3 +35,38 @@ vim.keymap.set("n", "gl",
     end,
     { desc = "LSP: Show line diagnostics" }
 )
+
+vim.keymap.set("n", "gd",
+    function()
+        vim.lsp.buf.definition({})
+    end,
+    { desc = "LSP: Go to definition" }
+)
+
+vim.keymap.set("n", "gD",
+    function()
+        vim.lsp.buf.declaration({})
+    end,
+    { desc = "LSP: Go to declaration" }
+)
+
+vim.keymap.set("n", "gi",
+    function()
+        vim.lsp.buf.implementation({})
+    end,
+    { desc = "LSP: Go to implementation" }
+)
+
+vim.keymap.set("n", "go",
+    function()
+        vim.lsp.buf.type_definition({})
+    end,
+    { desc = "LSP: Go to type definition" }
+)
+
+vim.keymap.set("n", "gs",
+    function()
+        vim.lsp.buf.signature_help({})
+    end,
+    { desc = "LSP: Signature help" }
+)
