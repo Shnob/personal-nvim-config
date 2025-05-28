@@ -20,12 +20,12 @@ return {
         {
             '<leader>db',
             function () require'dap'.toggle_breakpoint() end,
-            desc = "Dap: Breakpoint",
+            desc = "Dap: Toggle Breakpoint",
         },
         {
             '<leader>dB',
             function () require'dap'.set_breakpoint() end,
-            desc = "Dap: Breakpoint",
+            desc = "Dap: Set Breakpoint",
         },
         {
             '<leader>dc',
@@ -45,32 +45,32 @@ return {
         {
             '<leader>dso',
             function () require'dap'.step_out() end,
-            desc = "Dap: Terminate",
+            desc = "Dap: Step out",
         },
         {
             '<leader>dsi',
             function () require'dap'.step_into() end,
-            desc = "Dap: Terminate",
+            desc = "Dap: Step into",
         },
         {
             '<leader>dss',
             function () require'dap'.step_over() end,
-            desc = "Dap: Terminate",
+            desc = "Dap: Step over",
         },
         {
             '<leader>dr',
             function () require'dap'.repl.open() end,
-            desc = "Dap: Terminate",
+            desc = "Dap: Open REPL",
         },
         {
             '<leader>dl',
             function () require'dap'.repl.run_last() end,
-            desc = "Dap: Terminate",
+            desc = "Dap: Run last",
         },
         {
             '<leader>dk',
             function () require'dap'.repl.hover() end,
-            desc = "Dap: Terminate",
+            desc = "Dap: Hover REPL",
         },
     },
 }
