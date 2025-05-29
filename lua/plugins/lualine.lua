@@ -176,7 +176,7 @@ return {
         ins_lualine {
             'diagnostics',
             sources = { 'nvim_diagnostic' },
-            symbols = { error = ' ', warn = ' ', info = ' ' },
+            symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
             diagnostics_color = {
                 color_error = { fg = colors.red },
                 color_warn = { fg = colors.yellow },
@@ -211,10 +211,10 @@ return {
         ins_tabline {
             'diff',
             -- Is it me or the symbol for modified us really weird
-            symbols = { added = ' ', modified = ' ', removed = ' ' },
+            symbols = { added = '+', modified = '~', removed = '-' },
             diff_color = {
-                added = { fg = colors.green },
-                modified = { fg = colors.orange },
+                added = { fg = colors.lime },
+                modified = { fg = colors.blue },
                 removed = { fg = colors.red },
             },
             cond = conditions.hide_in_width,
