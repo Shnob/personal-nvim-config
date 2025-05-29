@@ -81,6 +81,10 @@ vim.g.set_extra_colorscheme_settings_transparent = function()
     vim.api.nvim_set_hl(0, "CmpItemKindInterface", { fg = interface_color_typeparameter, bg = "NONE" })
     vim.api.nvim_set_hl(0, "CmpItemKindColor", { fg = interface_color_typeparameter, bg = "NONE" })
     vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", { fg = interface_color_typeparameter, bg = "NONE" })
+
+    -- Diff stuff
+    vim.api.nvim_set_hl(0, "DiffAdd", { fg = "NONE", bg = "#1a6a3a" })
+    vim.api.nvim_set_hl(0, "DiffDelete", { fg = "#333333", bg = "#111111" })
 end
 
 vim.g.set_extra_colorscheme_settings_all = function()
