@@ -66,7 +66,18 @@ vim.keymap.set("n", "go",
 
 vim.keymap.set("n", "gs",
     function()
-        vim.lsp.buf.signature_help({})
+        vim.lsp.buf.signature_help({
+            border = 'rounded',
+        })
+    end,
+    { desc = "LSP: Signature help" }
+)
+
+vim.keymap.set("i", "<C-s>",
+    function()
+        vim.lsp.buf.signature_help({
+            border = 'rounded',
+        })
     end,
     { desc = "LSP: Signature help" }
 )
