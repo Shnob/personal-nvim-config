@@ -19,58 +19,51 @@ vim.keymap.set("i", "jk", "<esc>", {desc = "jk to escape"})
 vim.keymap.set("n", "<C-h>", "<cmd>Copilot disable<CR>", {desc = "Copilot: Disable"})
 vim.keymap.set("i", "<C-h>", "<cmd>Copilot disable<CR>", {desc = "Copilot: Disable"})
 
--- Lsp keymaps
+-- LSP keymaps
 vim.keymap.set("n", "K",
     function()
         vim.lsp.buf.hover({
             border = 'rounded',
         })
     end,
-    { desc = "LSP: Hover" }
+    { desc = "vim.lsp.buf.hover()" }
 )
 
 vim.keymap.set("n", "gl",
     function()
         vim.diagnostic.open_float(nil, {})
     end,
-    { desc = "LSP: Show line diagnostics" }
+    { desc = "vim.diagnostic.open_float()" }
 )
 
-vim.keymap.set("n", "gd",
+vim.keymap.set("n", "grd",
     function()
         vim.lsp.buf.definition({})
     end,
-    { desc = "LSP: Go to definition" }
+    { desc = "vim.lsp.buf.definition()" }
 )
 
-vim.keymap.set("n", "gD",
+vim.keymap.set("n", "grD",
     function()
         vim.lsp.buf.declaration({})
     end,
-    { desc = "LSP: Go to declaration" }
+    { desc = "vim.lsp.buf.declaration()" }
 )
 
-vim.keymap.set("n", "gi",
-    function()
-        vim.lsp.buf.implementation({})
-    end,
-    { desc = "LSP: Go to implementation" }
-)
-
-vim.keymap.set("n", "go",
+vim.keymap.set("n", "gro",
     function()
         vim.lsp.buf.type_definition({})
     end,
-    { desc = "LSP: Go to type definition" }
+    { desc = "vim.lsp.buf.type_definition()" }
 )
 
-vim.keymap.set("n", "gs",
+vim.keymap.set("n", "grs",
     function()
         vim.lsp.buf.signature_help({
             border = 'rounded',
         })
     end,
-    { desc = "LSP: Signature help" }
+    { desc = "vim.lsp.buf.signature_help()" }
 )
 
 vim.keymap.set("i", "<C-s>",
@@ -79,5 +72,5 @@ vim.keymap.set("i", "<C-s>",
             border = 'rounded',
         })
     end,
-    { desc = "LSP: Signature help" }
+    { desc = "vim.lsp.buf.signature_help()" }
 )
