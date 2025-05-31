@@ -159,7 +159,8 @@ return {
                     return no_lsp_msg
                 end
                 for _, client in ipairs(clients) do
-                    if client.name == 'GitHub Copilot' then
+                    if client.name == 'GitHub Copilot'
+                        or client.name == 'harper_ls' then
                         goto continue
                     end
                     if vim.lsp.buf_is_attached(0, client.id) then
