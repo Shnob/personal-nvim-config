@@ -43,6 +43,13 @@ vim.keymap.set("n", "grd",
     { desc = "vim.lsp.buf.definition()" }
 )
 
+vim.keymap.set("n", "gri",
+    function()
+        vim.lsp.buf.implementation({})
+    end,
+    { desc = "vim.lsp.buf.implementation()" }
+)
+
 vim.keymap.set("n", "grD",
     function()
         vim.lsp.buf.declaration({})
