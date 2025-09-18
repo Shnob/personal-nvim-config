@@ -1,14 +1,9 @@
-return {}
---return {
---    "stevearc/oil.nvim",
---    lazy = false,
---    dependencies = {
---        { "nvim-tree/nvim-web-devicons" },
---    },
---    config = function()
---        require('oil').setup()
---    end,
---    keys = {
---        { "<leader>fo", "<cmd>Oil<cr>", { desc = "Open Oil" } },
---    }
---}
+return {
+    'stevearc/oil.nvim',
+    keys = {
+        { '<leader>fi', '<cmd>Oil<cr>', desc = 'Open Oil' },
+    },
+    opts = {
+        default_file_explorer = false,
+    },
+}

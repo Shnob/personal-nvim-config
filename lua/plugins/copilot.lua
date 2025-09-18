@@ -1,3 +1,5 @@
+return {}
+--[[
 return {
     "github/copilot.vim",
 
@@ -15,3 +17,4 @@ return {
         vim.api.nvim_set_keymap('i', '<M-k>', '<Plug>(copilot-previous)', { desc = "Copilot: Previous" })
     end
 }
+]]--
